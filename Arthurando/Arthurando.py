@@ -193,7 +193,7 @@ def backdoor2():
     if ip == '':
         ip = '127.0.0.1'
     print()
-    port = input(f'     {branco}[{azul}PORT{branco}]{azul}  LPORT :')
+    port = input(f'     {branco}[{azul}PORT{branco}]{azul}  LPORT :') 
     if port == '':
         port = '4444'
     print()
