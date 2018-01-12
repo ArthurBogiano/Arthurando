@@ -24,7 +24,7 @@ def done(payload):
         msf.gera_payloads(nome=payload[4], formato='php', tipo=payload[1],
                           ip=payload[2], port=payload[3], encoder=payload[5])
     elif payload[0] == 8 and payload[1] in msf.python:
-        msf.gera_payloads(nome=payload[4], formato='pyw', tipo=payload[1],
+        msf.gera_payloads(nome=payload[4], formato='py', tipo=payload[1],
                           ip=payload[2], port=payload[3], encoder=payload[5])
     elif payload[0] == 9 and payload[1] in msf.linux or msf.windows:
         msf.gera_payloads(nome=payload[4], formato='asp', tipo=payload[1],
