@@ -59,6 +59,8 @@ def backdoor():
         cria = 11
     elif opcao1 == '12':
         cria = 12
+    else:
+        backdoor()
     # -----------------------------------
     backdoor2()
 
