@@ -189,11 +189,11 @@ def backdoor2():
     print(f'     {branco}[{azul}DEFAULT PORT{branco}]{azul}  4444 (multi/handler)')
     print(f'     {branco}[{azul}DEFAULT OPTIONS{branco}]{azul}  Pressione << enter >> para opções default :3')
     print()
-    ip = input(f'     {branco}[{azul}IP{branco}]{azul}  LHOST :')
+    ip = input(f'     {branco}[{azul}IP{branco}]{azul}  LHOST : ')
     if ip == '':
         ip = '127.0.0.1'
     print()
-    port = input(f'     {branco}[{azul}PORT{branco}]{azul}  LPORT :') 
+    port = input(f'     {branco}[{azul}PORT{branco}]{azul}  LPORT : ') 
     if port == '':
         port = '4444'
     print()
