@@ -1,3 +1,4 @@
+
 # CONSTANTES
 
 d = '\033[m'
